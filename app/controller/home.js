@@ -20,6 +20,25 @@ class HomeController extends Controller {
     ctx.body = result;
   }
 
+  async addUser() {
+    const { ctx } = this;
+    const { name } = ctx.request.body;
+    try {
+      const result = await ctx.service.home.addUser(name);
+      ctx.body = {
+        code: 200,
+        msg: '添加成功',
+        data: result,
+      };
+    } catch (error) {
+      ctx.body = {
+        code: 500,
+        msg: '添加失败',
+        data: null,
+      };
+    }
+  }
+
   // home post请求方法
   async add() {
     const { ctx } = this;
