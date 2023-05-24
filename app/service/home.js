@@ -23,7 +23,30 @@ class HomeService extends Service {
   async addUser(name) {
     const { app } = this;
     try {
-      const result = await app.mysql.insert('list', name);// 给list表新增一条数据
+      const result = await app.mysql.insert('list', { name }); // 给list表新增一条数据
+      return result;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  }
+
+  async editUser(id, name) {
+    const { app } = this;
+    try {
+      const result = app.mysql.update('list', { name }, { where: { id } });
+      return result;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  }
+
+  // 删除
+  async deleteUser(id) {
+    const { app } = this;
+    try {
+      const result = await app.mysql.delete('list', { id });
       return result;
     } catch (error) {
       console.log(error);
