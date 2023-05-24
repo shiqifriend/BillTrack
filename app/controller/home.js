@@ -5,9 +5,12 @@ const { Controller } = require('egg');
 class HomeController extends Controller {
   async index() {
     const { ctx } = this;
-    const { id } = ctx.query;
-    console.log('1212121212121212121212121', id);
-    ctx.body = id;
+    await ctx.render('index.html', {
+      title: '我是张三',
+    });
+    // const { id } = ctx.query;
+    // console.log('1212121212121212121212121', id);
+    // ctx.body = id;
   }
 
   // 获取用户信息

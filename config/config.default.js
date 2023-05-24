@@ -31,6 +31,12 @@ module.exports = appInfo => {
     domainWhiteList: [ '*' ],
   };
 
+  config.view = {
+    mapping: {
+      '.html': 'ejs',
+    },
+  };
+
   return {
     ...config,
     ...userConfig,
