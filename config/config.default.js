@@ -37,6 +37,21 @@ module.exports = appInfo => {
     },
   };
 
+  config.mysql = {
+    // 单数据库信息配置
+    client: {
+      host: 'localhost',
+      port: '3306',
+      user: 'root',
+      password: 'wsq20020123',
+      database: 'egg_accounting',
+    },
+    // 是否挂载到app上，默认打开
+    app: true,
+    // 是否挂载到agent上，默认关闭
+    agent: false,
+  };
+
   return {
     ...config,
     ...userConfig,
