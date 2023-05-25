@@ -44,7 +44,7 @@ module.exports = appInfo => {
       port: '3306',
       user: 'root',
       password: 'wsq20020123',
-      database: 'egg_accounting',
+      database: 'BillTrack',
     },
     // 是否挂载到app上，默认打开
     app: true,
