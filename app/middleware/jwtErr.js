@@ -3,6 +3,7 @@
 module.exports = secret => {
   return async function jwtErr(ctx, next) {
     const token = ctx.request.header.authorization; // 若是没有token，返回的是null字符串
+    console.log('middleware', token);
     let decode;
     if (token !== 'null' && token) {
       try {
