@@ -52,6 +52,10 @@ module.exports = appInfo => {
     agent: false,
   };
 
+  config.jwt = {
+    secret: 'wushiqing',
+  };
+
   return {
     ...config,
     ...userConfig,

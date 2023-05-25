@@ -10,6 +10,10 @@ module.exports = {
     enable: true,
     package: 'egg-mysql',
   },
+  jwt: {
+    enable: true,
+    package: 'egg-jwt',
+  },
   // had enabled by egg
   // static: {
   //   enable: true,
