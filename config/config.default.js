@@ -21,6 +21,7 @@ module.exports = appInfo => {
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
+    uploadDir: 'app/public/upload',
   };
 
   config.security = {
@@ -54,6 +55,10 @@ module.exports = appInfo => {
 
   config.jwt = {
     secret: 'wushiqing',
+  };
+
+  config.multipart = {
+    mode: 'file',
   };
 
   return {
