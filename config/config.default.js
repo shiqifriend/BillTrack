@@ -61,6 +61,12 @@ module.exports = appInfo => {
     mode: 'file',
   };
 
+  config.cors = {
+    origin: '*', // 允许所有跨域访问
+    credentials: true, // 允许 Cookie 跨域
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
+  };
+
   return {
     ...config,
     ...userConfig,

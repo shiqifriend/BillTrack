@@ -19,7 +19,7 @@ class UploadController extends Controller {
       // 创建图片保存的路径
       const dir = path.join(this.config.uploadDir, day);
       const date = Date.now(); // 毫秒数
-      await mkdirp(dir); // 不存在就创建目录
+      await mkdirp.mkdirp(dir); // 不存在就创建目录
       // 返回图片保存的路径
       uploadDir = path.join(dir, date + path.extname(file.filename));
       // 写入文件夹
