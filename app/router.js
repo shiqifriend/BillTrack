@@ -13,6 +13,8 @@ module.exports = app => {
   router.post('/api/user/edit_userinfo', _jwt, controller.user.editUserInfo);// 修改用户个性签名
   router.get('/api/user/test', _jwt, controller.user.test);
   router.post('/api/upload', controller.upload.upload);
+  router.post('/api/bill/add', _jwt, controller.bill.add); // 添加账单
+  router.get('/api/bill/list', _jwt, controller.bill.list); // 获取账单列表
 
   // router.get('/user/:id', controller.home.user);
   // router.get('/user', controller.home.user);
